@@ -1,6 +1,7 @@
 package ar.edu.ort.conclasesjava;
 
 import java.util.Observable;
+
 //La clase que representa al SujetoConcreto
 public class Temperatura extends Observable {
 
@@ -18,11 +19,11 @@ public class Temperatura extends Observable {
         // el if evita que haya notificaciones innecesarias
         if (valor != this.valor) {
             this.valor = valor;
-            // Métodos de Observable que notifican el cambio de estado. Ambos son necesarios, aunque no
+            // Mï¿½todos de Observable que notifican el cambio de estado. Ambos son necesarios, aunque no
             // necesariamente deben invocarse juntos.
-            setChanged();
-            notifyObservers();
-            // notifyObservers() puede recibir un objeto de cualquier tipo. Se utiliza así cuando no se quiere enviar el
+            super.setChanged();
+            super.notifyObservers();
+            // notifyObservers() puede recibir un objeto de cualquier tipo. Se utiliza asï¿½ cuando no se quiere enviar el
             // objeto completo.
             //notifyObservers(new Double(valor));
         }

@@ -2,6 +2,7 @@ package ar.edu.ort.conclasesjava;
 
 import java.util.Observable;
 import java.util.Observer;
+
 //Clase que representa un tipo de ObservadorConcreto
 public abstract class Termometro implements Observer {
 
@@ -14,12 +15,12 @@ public abstract class Termometro implements Observer {
         update(sujeto, null);// si fuese necesario, actualizo la primera "vista" del valor.
     }
     
-    // servirá para calcular la temperatura en el sistema que corresponda.
+    // servirï¿½ para calcular la temperatura en el sistema que corresponda.
     protected abstract double temperaturaConvertida(double kelvins);
 
-    // Implementamos update pensando que el sujeto puede o no enviarnos un segundo parámetro
-    // con la información que estamos escuchando (data).
-    // Como la firma del método es genérica, siempre deberemos conocer cómo transformarla en lo que necesitamos.
+    // Implementamos update pensando que el sujeto puede o no enviarnos un segundo parï¿½metro
+    // con la informaciï¿½n que estamos escuchando (data).
+    // Como la firma del mï¿½todo es genï¿½rica, siempre deberemos conocer cï¿½mo transformarla en lo que necesitamos.
     @Override
     public void update(Observable sujeto, Object data) {
         if (data != null && data instanceof Double) {
